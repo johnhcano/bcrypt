@@ -8,7 +8,7 @@ public class Conectar {
 
     public String bcrypt(Usuario usuario, int cost) {
         if (cost >= 1) {
-            // System.out.println("cost:"+cost);
+            // System.out.println("cost:" + cost);
             usuario.setContraseniaUsuario(salt(usuario));
             bcrypt(usuario, cost - 1);
         }
@@ -16,6 +16,7 @@ public class Conectar {
     }
 
     public String salt(Usuario usuario) {
-        return md5.getMd5("" + usuario.getIdUsuario() + usuario.getContraseniaUsuario());
+        String cad;
+        return md5.getMd5("" + (cad = usuario.getNombreUsuario().length() > 5 ? "15-oct-2025" : String.valueOf(Math.pow(usuario.getIdUsuario(),2))) + usuario.getContraseniaUsuario());
     }
 }
