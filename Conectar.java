@@ -17,6 +17,6 @@ public class Conectar {
 
     public String salt(Usuario usuario) {
         String cad;
-        return md5.getMd5("" + (cad = usuario.getNombreUsuario().length() > 5 ? "15-oct-2025" : String.valueOf(Math.pow(usuario.getIdUsuario(),2))) + usuario.getContraseniaUsuario());
+        return md5.getMd5("" + "cadena a modificar" + usuario.getContraseniaUsuario());
     }
 }
